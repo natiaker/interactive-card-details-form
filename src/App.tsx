@@ -1,5 +1,16 @@
+import { Container } from "./components/styles/Container.styled";
+import Card from "./components/Card";
+import Form from "./components/Form";
+
 function App() {
-  return <div className='App'>hello</div>;
+  return (
+    <>
+      <Container>
+        <Card />
+        <Form />
+      </Container>
+    </>
+  );
 }
 
 export default App;
