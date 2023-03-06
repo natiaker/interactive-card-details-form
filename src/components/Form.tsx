@@ -1,13 +1,9 @@
 import { Flex } from "./styles/Flex.styled";
-import { Button } from "./styles/Form.styled";
-
-export interface Props {
-  row: boolean;
-}
+import { StyledForm, Button } from "./styles/Form.styled";
 
 export default function Form() {
   return (
-    <form>
+    <StyledForm>
       <Flex row={false}>
         <label>Cardholder Name:</label>
         <input
@@ -21,19 +17,21 @@ export default function Form() {
           name='card-number'
           placeholder='e.g. 1234 5678 9123 0000'
         />
-        <Flex row={true}>
+        <Flex row>
           <label>
             Exp. Date (MM/YY) <br />
-            <input
-              type='number'
-              name='month'
-              placeholder='MM'
-            />
-            <input
-              type='number'
-              name='year'
-              placeholder='YY'
-            />
+            <Flex row>
+              <input
+                type='number'
+                name='month'
+                placeholder='MM'
+              />
+              <input
+                type='number'
+                name='year'
+                placeholder='YY'
+              />
+            </Flex>
           </label>
           <label>
             CVC <br />
@@ -46,6 +44,6 @@ export default function Form() {
         </Flex>
         <Button type='submit'>Confirm</Button>
       </Flex>
-    </form>
+    </StyledForm>
   );
 }

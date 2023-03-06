@@ -1,5 +1,8 @@
 import styled from "styled-components";
-import { Props } from "../Form";
+
+type Props = {
+  row: boolean;
+};
 
 export const Flex = styled.div<Props>`
   display: flex;
