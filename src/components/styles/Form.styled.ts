@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const StyledForm = styled.form`
   max-width: 350px;
   margin: 91px auto 45px;
-
   label {
     font-size: 12px;
     line-height: 15px;
@@ -11,7 +10,6 @@ export const StyledForm = styled.form`
     text-transform: uppercase;
     color: #21092f;
   }
-
   input {
     width: 100%;
     margin: 9px 8px 20px 0;
@@ -25,6 +23,12 @@ export const StyledForm = styled.form`
       color: #21092f;
       opacity: 0.25;
     }
+  }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 100x;
   }
 `;
 

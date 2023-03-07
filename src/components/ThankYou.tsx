@@ -1,7 +1,7 @@
 import { StyledThankYou } from "./styles/ThankYou.styled";
 import { Button } from "./styles/Form.styled";
 
-export default function ThankYou() {
+export default function ThankYou({ setIsConfirmed }: any) {
   return (
     <StyledThankYou>
       <img
@@ -10,7 +10,7 @@ export default function ThankYou() {
       />
       <h1>Thank You!</h1>
       <p>We’ve added your card details</p>
-      <Button>Continue</Button>
+      <Button onClick={() => setIsConfirmed(false)}>Continue</Button>
     </StyledThankYou>
   );
 }

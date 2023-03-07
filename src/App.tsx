@@ -6,14 +6,18 @@ import GlobalStyles from "./components/styles/GlobalStyles";
 import ThankYou from "./components/ThankYou";
 
 function App() {
-  const [isConfirmed, setIsConfirmed] = useState<Boolean>(true);
+  const [isConfirmed, setIsConfirmed] = useState<Boolean>(false);
 
   return (
     <>
+      <GlobalStyles />
       <Container>
-        <GlobalStyles />
         <Card />
-        {isConfirmed ? <ThankYou /> : <Form />}
+        {isConfirmed ? (
+          <ThankYou setIsConfirmed={setIsConfirmed} />
+        ) : (
+          <Form setIsConfirmed={setIsConfirmed} />
+        )}
       </Container>
     </>
   );

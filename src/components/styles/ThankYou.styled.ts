@@ -19,4 +19,10 @@ export const StyledThankYou = styled.div`
     line-height: 23px;
     color: #8f8694;
   }
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;

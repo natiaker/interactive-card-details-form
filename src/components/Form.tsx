@@ -1,7 +1,7 @@
 import { Flex } from "./styles/Flex.styled";
 import { StyledForm, Button } from "./styles/Form.styled";
 
-export default function Form() {
+export default function Form({ setIsConfirmed }: any) {
   return (
     <StyledForm>
       <Flex row={false}>
@@ -42,7 +42,12 @@ export default function Form() {
             />
           </label>
         </Flex>
-        <Button type='submit'>Confirm</Button>
+        <Button
+          type='submit'
+          onClick={() => setIsConfirmed(true)}
+        >
+          Confirm
+        </Button>
       </Flex>
     </StyledForm>
   );

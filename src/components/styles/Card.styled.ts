@@ -8,9 +8,14 @@ export const StyledCard = styled.section`
   background-position: center;
   background-size: cover;
   img {
-    width: 100%;
     max-width: 286px;
     height: auto;
+    @media screen and (min-width: 768px) {
+      max-width: 400px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    max-width: 50%;
   }
 `;
 
@@ -20,16 +25,27 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  @media screen and (min-width: 768px) {
+    min-width: 483px;
+  }
 `;
 
 export const CardBack = styled.img`
   position: absolute;
   top: 32px;
   right: 16px;
+  @media screen and (min-width: 768px) {
+    top: 469px;
+    left: 258px;
+  }
 `;
 
 export const CardFront = styled.img`
   position: absolute;
   top: 126px;
   left: 16px;
+  @media screen and (min-width: 768px) {
+    top: 187px;
+    left: 164px;
+  }
 `;
