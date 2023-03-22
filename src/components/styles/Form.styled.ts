@@ -28,7 +28,13 @@ export const StyledForm = styled.form`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 100x;
+    margin: 0 20px;
+  }
+  @media screen and (min-width: 1068px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
 `;
 

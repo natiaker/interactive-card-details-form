@@ -3,49 +3,61 @@ import styled from "styled-components";
 export const StyledCard = styled.section`
   min-height: 240px;
   display: flex;
+  justify-content: center;
   background-image: url("/assets/bg-main-mobile.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  img {
-    max-width: 286px;
-    height: auto;
-    @media screen and (min-width: 768px) {
-      max-width: 400px;
-    }
-  }
   @media screen and (min-width: 768px) {
-    max-width: 50%;
+    background-image: url("/assets/bg-main-desktop.png");
   }
 `;
 
 export const Wrapper = styled.div`
-  margin: 0 auto;
-  min-width: 375px;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+  max-width: 375px;
+  display: flex;
   @media screen and (min-width: 768px) {
     min-width: 483px;
+    height: fit-content;
+    margin-top: 171px;
+    flex-direction: column-reverse;
   }
 `;
 
-export const CardBack = styled.img`
-  position: absolute;
-  top: 32px;
-  right: 16px;
+export const CardBack = styled.div`
+  margin-top: 32px;
+  margin-left: 73px;
+  background-image: url("/assets/bg-card-back.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 286px;
+  height: 157px;
   @media screen and (min-width: 768px) {
-    top: 469px;
-    left: 258px;
+    margin-top: 37px;
+    width: 447px;
+    height: 245px;
+    margin-left: 0;
+  }
+  @media screen and (min-width: 1068px) {
+    margin-left: 260px;
   }
 `;
 
-export const CardFront = styled.img`
+export const CardFront = styled.div`
+  background-image: url("/assets/bg-card-front.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 286px;
+  height: 157px;
   position: absolute;
   top: 126px;
-  left: 16px;
   @media screen and (min-width: 768px) {
-    top: 187px;
-    left: 164px;
+    position: static;
+    width: 447px;
+    height: 245px;
+    margin-left: 0;
+  }
+  @media screen and (min-width: 1068px) {
+    margin-left: 164px;
   }
 `;
