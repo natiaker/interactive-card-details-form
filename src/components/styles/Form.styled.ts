@@ -28,13 +28,14 @@ export const StyledForm = styled.form`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 20px;
+    padding: 0 10px;
   }
-  @media screen and (min-width: 1068px) {
+  @media screen and (min-width: 1285px) {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    padding: 0;
   }
 `;
 
