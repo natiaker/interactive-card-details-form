@@ -15,10 +15,10 @@ export const StyledCard = styled.section`
 
 export const Wrapper = styled.div`
   max-width: 375px;
+  font-family: "Space Grotesk", sans-serif;
   display: flex;
   p {
     color: white;
-    font-family: "Space Grotesk";
     font-style: normal;
     font-weight: 500;
     font-size: 9px;
@@ -29,8 +29,9 @@ export const Wrapper = styled.div`
   }
   @media screen and (min-width: 768px) {
     min-width: 483px;
-    height: fit-content;
-    margin-top: 171px;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
     flex-direction: column-reverse;
     p {
       font-size: 14px;
