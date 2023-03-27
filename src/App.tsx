@@ -23,7 +23,7 @@ enum CardActionType {
 
 interface CardAction {
   type: CardActionType;
-  payload: any;
+  payload: string;
 }
 
 const initialCardDetails = {
@@ -81,21 +81,24 @@ function App() {
     });
   }
   function handleMonthChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const limit = 2;
     dispatch({
       type: CardActionType.Set_month,
-      payload: e.target.value,
+      payload: e.target.value.slice(0, limit),
     });
   }
   function handleYearChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const limit = 2;
     dispatch({
       type: CardActionType.Set_year,
-      payload: e.target.value,
+      payload: e.target.value.slice(0, limit),
     });
   }
   function handleCvcChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const limit = 3;
     dispatch({
       type: CardActionType.Set_cvc,
-      payload: e.target.value,
+      payload: e.target.value.slice(0, limit),
     });
   }
 

@@ -20,6 +20,7 @@ export default function Form({
         <label>Cardholder Name:</label>
         <input
           type='text'
+          maxLength={20}
           name='name'
           placeholder='e.g. Jane Appleseed'
           value={name}
@@ -41,6 +42,8 @@ export default function Form({
                 type='number'
                 name='month'
                 placeholder='MM'
+                min={1}
+                max={12}
                 value={month}
                 onChange={handleMonthChange}
               />
@@ -48,6 +51,7 @@ export default function Form({
                 type='number'
                 name='year'
                 placeholder='YY'
+                min={22}
                 value={year}
                 onChange={handleYearChange}
               />
@@ -56,6 +60,7 @@ export default function Form({
           <label>
             CVC <br />
             <input
+              maxLength={5}
               type='number'
               name='cvc'
               placeholder='e.g. 123'
