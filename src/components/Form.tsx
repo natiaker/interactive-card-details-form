@@ -1,19 +1,22 @@
 import { Flex } from "./styles/Flex.styled";
 import { StyledForm, Button } from "./styles/Form.styled";
+import { useGlobalContext } from "../context";
 
-export default function Form({
-  setIsConfirmed,
-  name,
-  number,
-  month,
-  year,
-  cvc,
-  handleNameChange,
-  handleNumberChange,
-  handleMonthChange,
-  handleYearChange,
-  handleCvcChange,
-}: any) {
+export default function Form() {
+  const {
+    name,
+    number,
+    month,
+    year,
+    cvc,
+    handleNameChange,
+    handleNumberChange,
+    handleMonthChange,
+    handleYearChange,
+    handleCvcChange,
+    handleSubmit,
+  }: any = useGlobalContext();
+
   return (
     <StyledForm>
       <Flex row={false}>
@@ -71,7 +74,7 @@ export default function Form({
         </Flex>
         <Button
           type='submit'
-          onClick={() => setIsConfirmed(true)}
+          onClick={handleSubmit}
         >
           Confirm
         </Button>

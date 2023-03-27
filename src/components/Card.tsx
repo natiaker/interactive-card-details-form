@@ -1,13 +1,9 @@
 import { StyledCard, Wrapper, CardBack, CardFront } from "./styles/Card.styled";
-import { cardDetailsType } from "../App";
+import { useGlobalContext } from "../context";
 
-export default function Card({
-  name,
-  number,
-  month,
-  year,
-  cvc,
-}: cardDetailsType) {
+export default function Card() {
+  const { name, number, month, year, cvc }: any = useGlobalContext();
+
   return (
     <StyledCard>
       <Wrapper>

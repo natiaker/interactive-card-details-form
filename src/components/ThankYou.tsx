@@ -1,7 +1,9 @@
 import { StyledThankYou } from "./styles/ThankYou.styled";
 import { Button } from "./styles/Form.styled";
+import { useGlobalContext } from "../context";
 
-export default function ThankYou({ setIsConfirmed }: any) {
+export default function ThankYou() {
+  const { handleReset }: any = useGlobalContext();
   return (
     <StyledThankYou>
       <img
@@ -10,7 +12,7 @@ export default function ThankYou({ setIsConfirmed }: any) {
       />
       <h1>Thank You!</h1>
       <p>We’ve added your card details</p>
-      <Button onClick={() => setIsConfirmed(false)}>Continue</Button>
+      <Button onClick={handleReset}>Continue</Button>
     </StyledThankYou>
   );
 }
