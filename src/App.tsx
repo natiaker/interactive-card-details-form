@@ -28,11 +28,12 @@ interface CardAction {
 
 const initialCardDetails = {
   name: "",
-  number: "0000 0000 0000 0000",
-  month: "MM",
-  year: "YY",
-  cvc: "cvc",
+  number: "",
+  month: "",
+  year: "",
+  cvc: "",
 };
+
 const reducer = (state: cardDetailsType, action: CardAction) => {
   switch (action.type) {
     case CardActionType.Set_cardholder:
@@ -64,6 +65,7 @@ const reducer = (state: cardDetailsType, action: CardAction) => {
       return state;
   }
 };
+
 function App() {
   const [isConfirmed, setIsConfirmed] = useState<Boolean>(false);
   const [cardDetails, dispatch] = useReducer(reducer, initialCardDetails);
@@ -75,6 +77,13 @@ function App() {
     });
   }
   function handleNumberChange(e: React.ChangeEvent<HTMLInputElement>) {
+    if (
+      e.target.value.length === 4 ||
+      e.target.value.length === 9 ||
+      e.target.value.length === 14
+    ) {
+      e.target.value = e.target.value += " ";
+    }
     dispatch({
       type: CardActionType.Set_number,
       payload: e.target.value,

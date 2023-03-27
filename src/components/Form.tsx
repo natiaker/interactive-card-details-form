@@ -28,7 +28,8 @@ export default function Form({
         />
         <label>Card Number:</label>
         <input
-          type='number'
+          type='text'
+          maxLength={19}
           name='card-number'
           placeholder='e.g. 1234 5678 9123 0000'
           value={number}
@@ -60,7 +61,6 @@ export default function Form({
           <label>
             CVC <br />
             <input
-              maxLength={5}
               type='number'
               name='cvc'
               placeholder='e.g. 123'

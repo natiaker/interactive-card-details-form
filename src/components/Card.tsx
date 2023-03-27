@@ -12,18 +12,18 @@ export default function Card({
     <StyledCard>
       <Wrapper>
         <CardBack>
-          <p className='cvc'>{cvc}</p>
+          <p className='cvc'>{cvc || "cvc"}</p>
         </CardBack>
         <CardFront>
           <img
             src='./assets/card-logo.svg'
             alt='card-logo'
           />
-          <p className='card-number'>{number}</p>
+          <p className='card-number'>{number || "0000 0000 0000 0000"}</p>
           <div>
-            <p>{name ? name : "Jane Applessed"}</p>
+            <p>{name || "Jane Applessed"}</p>
             <p>
-              {month}/{year}
+              {month || "MM"}/{year || "YY"}
             </p>
           </div>
         </CardFront>
