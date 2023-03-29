@@ -15,7 +15,11 @@ function App() {
         <GlobalStyles />
         <Container>
           <Card />
-          {isConfirmed ? <ThankYou /> : <Form />}
+          {isConfirmed ? (
+            <ThankYou />
+          ) : (
+            <Form setIsConfirmed={setIsConfirmed} />
+          )}
         </Container>
       </AppProvider>
     </>

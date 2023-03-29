@@ -17,7 +17,6 @@ interface eventType {
   handleYearChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleCvcChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   handleReset: () => void;
-  handleSubmit: (e: React.SyntheticEvent) => void;
 }
 
 const initialCardDetails = {
@@ -55,9 +54,15 @@ const AppProvider = ({ children, setIsConfirmed }: any) => {
   }
   function handleMonthChange(e: React.ChangeEvent<HTMLInputElement>) {
     const limit = 2;
+    let newMonth = null;
+    if (parseInt(e.target.value.slice(0, limit)) > 12) {
+      newMonth = "12";
+    } else {
+      newMonth = e.target.value.slice(0, limit);
+    }
     dispatch({
       type: CardActionType.Set_month,
-      payload: e.target.value.slice(0, limit),
+      payload: newMonth,
     });
   }
   function handleYearChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -81,10 +86,6 @@ const AppProvider = ({ children, setIsConfirmed }: any) => {
       payload: "",
     });
   }
-  const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    setIsConfirmed(true);
-  };
 
   return (
     <AppContext.Provider
@@ -96,7 +97,6 @@ const AppProvider = ({ children, setIsConfirmed }: any) => {
         handleYearChange,
         handleCvcChange,
         handleReset,
-        handleSubmit,
       }}
     >
       {children}
