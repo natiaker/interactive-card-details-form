@@ -4,12 +4,12 @@ export const StyledCard = styled.section`
   min-height: 240px;
   display: flex;
   justify-content: center;
-  background-image: url("/assets/bg-main-mobile.png");
+  background-image: url(${process.env.PUBLIC_URL}/assets/bg-main-mobile.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   @media screen and (min-width: 768px) {
-    background-image: url("/assets/bg-main-desktop.png");
+    background-image: url(${process.env.PUBLIC_URL}/assets/bg-main-desktop.png);
   }
 `;
 
@@ -44,7 +44,7 @@ export const Wrapper = styled.div`
 export const CardBack = styled.div`
   margin-top: 32px;
   margin-left: 73px;
-  background-image: url("/assets/bg-card-back.png");
+  background-image: url(${process.env.PUBLIC_URL}/assets/bg-card-back.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 286px;
@@ -70,7 +70,7 @@ export const CardBack = styled.div`
 `;
 
 export const CardFront = styled.div`
-  background-image: url("/assets/bg-card-front.png");
+  background-image: url(${process.env.PUBLIC_URL}/assets/bg-card-front.png);
   background-size: contain;
   background-repeat: no-repeat;
   padding: 17.6px 19px;

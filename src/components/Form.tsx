@@ -73,29 +73,27 @@ export default function Form({ setIsConfirmed }: any) {
           <label>
             Exp. Date (MM/YY) <br />
             <Flex row>
-              <Flex row={false}>
-                <input
-                  type='number'
-                  name='month'
-                  placeholder='MM'
-                  min={1}
-                  max={12}
-                  value={month}
-                  onChange={handleMonthChange}
-                />
-                <span>{errorMsg.month}</span>
-              </Flex>
-              <Flex row={false}>
-                <input
-                  type='number'
-                  name='year'
-                  placeholder='YY'
-                  min={22}
-                  value={year}
-                  onChange={handleYearChange}
-                />
-                <span>{errorMsg.year}</span>
-              </Flex>
+              <input
+                type='number'
+                name='month'
+                placeholder='MM'
+                min={1}
+                max={12}
+                value={month}
+                onChange={handleMonthChange}
+              />
+              <input
+                type='number'
+                name='year'
+                placeholder='YY'
+                min={22}
+                value={year}
+                onChange={handleYearChange}
+              />
+            </Flex>
+            <Flex row>
+              <span>{errorMsg.month}</span>
+              <span>{errorMsg.year}</span>
             </Flex>
           </label>
           <label>

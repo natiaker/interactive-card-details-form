@@ -12,7 +12,7 @@ export default function Card() {
         </CardBack>
         <CardFront>
           <img
-            src='./assets/card-logo.svg'
+            src={process.env.PUBLIC_URL + "/assets/card-logo.svg"}
             alt='card-logo'
           />
           <p className='card-number'>{number || "0000 0000 0000 0000"}</p>

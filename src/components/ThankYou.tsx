@@ -7,7 +7,7 @@ export default function ThankYou() {
   return (
     <StyledThankYou>
       <img
-        src='/assets/icon-complete.svg'
+        src={process.env.PUBLIC_URL + "/assets/icon-complete.svg"}
         alt='complete-icon'
       />
       <h1>Thank You!</h1>
